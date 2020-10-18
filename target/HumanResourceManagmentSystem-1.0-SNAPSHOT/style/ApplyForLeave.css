@@ -1,0 +1,139 @@
+
+.content{
+
+    position: absolute;
+    box-align:right;
+    top:70px;
+    left :290px;
+    width:1060px;
+    height:580px;
+    border:1px white solid;
+    overflow-y: auto ;
+    background-image: linear-gradient(to right,#073356, #041d31, #000);
+}
+.remove{
+    border:2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+}
+.remove:hover{
+    border:2px solid #073356;
+    transition: 100ms;
+}
+.content .result{
+    padding-left: 60px;
+    color: #ffffff;
+    border-top:1px white solid;
+}
+
+.content .result th{
+
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.content .result tr{
+
+    color: #ffffff;
+    text-align: center;
+}
+.content .result td {
+    width: 300px;
+    padding-left: 20px;
+    height: 30px;
+}
+.heading{
+    width: 100%;
+    background-color:#000;
+    color: #ffffff;
+    padding: 10px 10px 10px 0px;
+    text-align: center;
+
+}
+.label{
+    width: 500px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+.input{
+    position: relative;
+    float: right;
+    line-height: 25px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    padding-left: 10px;
+}
+
+.content .leaves {
+    padding-left: 350px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    border-bottom:1px white solid;
+}
+.content .leaves .input{
+    width: 100px;
+}
+.content .leaves th{
+    width: 50px;
+    height: 50px;
+}
+.content .leaves td{
+    width: 200px;
+    height: 50px;
+}
+.content .main {
+    padding-left: 150px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+
+}
+.content .main .input{
+    width: 400px;
+}
+.content .main th{
+    width: 150px;
+    height: 50px;
+
+}
+.content .main td{
+    width: 300px;
+    height: 50px;
+}
+.content .btn{
+    border-bottom:1px white solid;
+}
+.content .btn td{
+    padding-left: 650px;
+}
+.content .btn th{
+    padding-left: 10px;
+}
+
+.approve,.reject{
+    border:2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+}
+.approve:hover{
+    border:2px solid #073356;
+    transition: 100ms;
+}
+.reject:hover{
+    border:2px solid #073356;
+    transition: 100ms;
+}
+textarea{
+    width: 700px;
+    height: 150px;
+    border-radius: 6px;
+    padding: 20px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+.content .result table tr:not(:first-child){
+    cursor: pointer;transition: all .25s ease-in-out;
+}
+.content .result table tr:not(:first-child):hover{background-color: #041d31;}

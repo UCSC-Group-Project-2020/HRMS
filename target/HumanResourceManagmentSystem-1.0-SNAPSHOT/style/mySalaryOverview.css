@@ -1,0 +1,109 @@
+
+.content{
+
+    position: absolute;
+    box-align:right;
+    top:70px;
+    left :290px;
+    width:1060px;
+    height:580px;
+    border:1px white solid;
+    overflow-y: auto ;
+    background-image: linear-gradient(to right,#073356, #041d31, #000);
+}
+.selection .date {
+    padding-left: 20px;
+}
+.selection .date select{
+    width: 130px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+.show{
+    border:2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+}
+.show:hover{
+    border:2px solid #073356;
+    transition: 100ms;
+}
+.content .selection table{
+    padding-left: 50px;
+}
+.content .selection tr td {
+    width: 300px;
+
+    padding-left: 300px;
+    padding-bottom:15px;
+}
+.content .selection tr th {
+    width: 130px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    padding-bottom: 15px;
+}
+.selection .year{
+    padding-left: 30px;
+}
+.selection .year input{
+    width: 100px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    padding-left: 10px;
+}
+.content .result{
+
+    color: #ffffff;
+    border-top:1px white solid;
+}
+.content .result th{
+
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.content .result tr{
+    border: 1px solid black;
+    color: #ffffff;
+    text-align: center;
+}
+.content .result td {
+    width: 300px;
+    padding-left: 20px;
+    height: 30px;
+}
+
+.heading{
+    width: 100%;
+    background-color:#000;
+
+    color: #ffffff;
+    padding: 10px 10px 10px 0px;
+    text-align: center;
+
+}
+.label{
+    width: 500px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+.input{
+    position: relative;
+    float: right;
+    line-height: 25px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    padding-left: 10px;
+}
+
+.content .result table tr:not(:first-child){
+    cursor: pointer;transition: all .25s ease-in-out;
+}
+.content .result table tr:not(:first-child):hover{background-color: #041d31;}
