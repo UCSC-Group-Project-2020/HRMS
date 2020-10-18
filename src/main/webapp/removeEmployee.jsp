@@ -9,13 +9,11 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-</head>
-<body>
-<div class="heading">
-    <title>Human Resource Management System</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/removeEmployee.css">
-</div>
+</head>
+<body>
+
 <div class="content">
     <div class="heading">
         <h3>Remove Employee</h3>
