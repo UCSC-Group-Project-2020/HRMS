@@ -5,6 +5,8 @@
     font-family: "Roboto", sans-serif;
 }
 body{
+    min-width: 1060px;
+
     background: #212f38;
 }
 .heading{
@@ -47,6 +49,7 @@ img{
     width: 280px;
     background-image: linear-gradient(to right, #000, #000, #052740);
     height: 100%;
+    overflow-y: auto ;
 }
 
 body {
@@ -165,6 +168,15 @@ span{
     transition: 800ms;
 }
 
+div a:hover{
+    border:2px solid #02111c;
+    transition: 100ms;
+}
+.Logout:hover{
+    border:2px solid #084778;
+    background: #052841;
+    transition: 300ms;
+}
 .Logout{
     background: #031420;
     border:none;

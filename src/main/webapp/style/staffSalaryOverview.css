@@ -20,6 +20,15 @@
     font-size: 15px;
     border-radius: 6px;
 }
+
+.show{
+    border:2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+}
+.show:hover{
+    border:2px solid #073356;
+    transition: 100ms;
+}
 .content .selection table{
     padding-left: 50px;
 }
@@ -39,15 +48,6 @@
 .selection .year{
     padding-left: 30px;
 }
-
-.show{
-    border:2px rgb(0, 0, 0) solid;
-    border-radius: 12px;
-}
-.show:hover{
-    border:2px solid #073356;
-    transition: 100ms;
-}
 .selection .year input{
     width: 100px;
     height: 25px;
@@ -56,8 +56,9 @@
     padding-left: 10px;
 }
 .content .result{
-    border-top:1px white solid;
+
     color: #ffffff;
+    border-top:1px white solid;
 }
 .content .result th{
 
@@ -106,3 +107,29 @@
     cursor: pointer;transition: all .25s ease-in-out;
 }
 .content .result table tr:not(:first-child):hover{background-color: #041d31;}
+
+@media screen and (max-width: 1100px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+        left :0;
+        height: 100%;
+        margin: 10px;
+    }
+    .main-menu{
+        display: none;
+    }
+    .head{
+        display: none;
+    }
+
+}
+@media screen and (max-height: 580px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+    }
+    .head{
+        display: none;
+    }
+}
