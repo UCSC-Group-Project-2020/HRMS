@@ -1,3 +1,7 @@
+import login.LoginBean;
+import login.LoginDao;
+import user.UserBean;
+import user.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -5,13 +9,58 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Login extends HttpServlet {
+public class Login extends HttpServlet
+{
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nic = req.getParameter("NIC");
-        String pass = req.getParameter("pass");
-        System.out.println(nic);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        String userName = request.getParameter("un");
+        String password = request.getParameter("pass");
 
+        LoginBean loginBean = new LoginBean();
 
+        loginBean.setUserName(userName);
+        loginBean.setPassword(password);
+
+        LoginDao loginDao = new LoginDao();
+
+        String userValidate = loginDao.authenticateUser(loginBean);
+
+        if (userValidate.equals("SUCCESS"))
+        {
+            UserBean privileges = new UserBean();
+            privileges.setEmpId(userName);
+            UserDao userPrivilegeDao = new UserDao();
+            UserBean Uprivileges = userPrivilegeDao.getUserPrivilege(privileges);
+
+            request.setAttribute("empId", Uprivileges.getEmpId());
+            request.setAttribute("empAdd",Uprivileges.getEmpAdd());
+            request.setAttribute("empDel", Uprivileges.getEmpDel());
+            request.setAttribute("postAdd",Uprivileges.getPostAdd());
+            request.setAttribute("postDel",Uprivileges.getPostDel());
+            request.setAttribute("postView",Uprivileges.getPostView());
+            request.setAttribute("chatSys",Uprivileges.getChatSys());
+            request.setAttribute("applyLeave",Uprivileges.getApplyLeave());
+            request.setAttribute("decisionLeave",Uprivileges.getDecisionLeave());
+            request.setAttribute("salaryManage",Uprivileges.getSalaryManage());
+            request.setAttribute("customizeData",Uprivileges.getCustomizeData());
+            request.setAttribute("editPersonalDetails",Uprivileges.getEditPersonalDetails());
+            request.setAttribute("giveComSug",Uprivileges.getGiveComSug());
+            request.setAttribute("viewComSug",Uprivileges.getViewComSug());
+            request.setAttribute("viewMyAttend",Uprivileges.getViewMyAttend());
+            request.setAttribute("viewAllAttend",Uprivileges.getViewAllAttend());
+            request.setAttribute("viewMyLeaves",Uprivileges.getViewMyLeaves());
+            request.setAttribute("viewAllLeaves",Uprivileges.getViewAllLeaves());
+            request.setAttribute("viewMySalary",Uprivileges.getViewMySalary());
+            request.setAttribute("viewAllSalary",Uprivileges.getViewAllSalary());
+            request.setAttribute("genReport",Uprivileges.getGenReport());
+
+            request.getRequestDispatcher("/sessions.jsp").forward(request, response);
+        }
+        else
+        {
+            request.setAttribute("errMessage", userValidate);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        }
     }
 }

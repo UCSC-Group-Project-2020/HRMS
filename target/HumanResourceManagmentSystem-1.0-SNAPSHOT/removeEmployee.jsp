@@ -11,9 +11,9 @@
     <title>Human Resource Management System</title>
 </head>
 <body>
-<div class="heading">
+<div>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainDashboard.css">
     <link rel="stylesheet" href="style/removeEmployee.css">
 </div>
 <div class="content">
