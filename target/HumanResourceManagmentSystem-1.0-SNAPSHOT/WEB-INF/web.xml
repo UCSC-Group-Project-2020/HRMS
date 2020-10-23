@@ -23,4 +23,22 @@
         <servlet-name>AddEmployee</servlet-name>
         <url-pattern>/addemployee</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SearchEmployeeById</servlet-name>
+        <servlet-class>SearchEmployeeById</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchEmployeeById</servlet-name>
+        <url-pattern>/searchemployee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateEmployee</servlet-name>
+        <servlet-class>UpdateEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateEmployee</servlet-name>
+        <url-pattern>/updateemployee</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -28,7 +28,7 @@ public class LoginDao
             statement = con.createStatement();
             rs = statement.executeQuery("SELECT empId,password FROM user");
 
-            while (rs.next())
+            while(rs.next())
             {
                 userNameDB = rs.getString("empId");
                 passwordDB = rs.getString("password");
