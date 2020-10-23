@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/approveOrRejectLeave.css">
+    <link rel="stylesheet" href="style/mainDashboard.css">
+    <link rel="stylesheet" href="style/approveOrRejectLeaves.css">
 </head>
 <body>
 <div class="content">
@@ -65,10 +65,11 @@
 
     </div>
     <div class="action">
-        <a href="#" class="Show">Approve>></a>
+        <a href="#" class="Show">Approve</a>
 
-        <a href="#" class="Show"> Reject>></a>
+        <a href="#" class="Show"> Reject</a>
     </div>
+    <br>
     <br><br>
     <div class="result">
         <br>

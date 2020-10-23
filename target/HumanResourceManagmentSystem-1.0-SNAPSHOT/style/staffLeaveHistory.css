@@ -75,10 +75,37 @@
     border-radius: 12px;
 }
 .Show:hover{
+    color: #1f9cf3;
     border:2px solid #073356;
-    transition: 100ms;
+    transition:300ms;
 }
 .content .result table tr:not(:first-child){
     cursor: pointer;transition: all .25s ease-in-out;
 }
 .content .result table tr:not(:first-child):hover{background-color: #041d31;}
+
+@media screen and (max-width: 1100px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+        left :0;
+        height: 100%;
+        margin: 10px;
+    }
+    .main-menu{
+        display: none;
+    }
+    .head{
+        display: none;
+    }
+
+}
+@media screen and (max-height: 580px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+    }
+    .head{
+        display: none;
+    }
+}

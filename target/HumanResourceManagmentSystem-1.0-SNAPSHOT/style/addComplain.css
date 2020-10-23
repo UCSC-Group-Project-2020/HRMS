@@ -8,7 +8,7 @@
     height:580px;
     border:1px white solid;
     overflow-y: auto ;
-    background-image: linear-gradient(to right,#073356, #041d31, #000);
+    background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
 }
 .Basic{
     color: #ffffff;
@@ -46,8 +46,9 @@ th {
     border-radius: 12px;
 }
 .send:hover{
+    color: #1f9cf3;
     border:2px solid #073356;
-    transition: 100ms;
+    transition:300ms;
 }
 .label{
     width: 500px;
@@ -89,4 +90,30 @@ textarea{
     border: 1px solid black;
     color: #ffffff;
     text-align: center;
+}
+
+@media screen and (max-width: 1100px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+        left :0;
+        height: 100%;
+        margin: 10px;
+    }
+    .main-menu{
+        display: none;
+    }
+    .head{
+        display: none;
+    }
+
+}
+@media screen and (max-height: 580px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+    }
+    .head{
+        display: none;
+    }
 }

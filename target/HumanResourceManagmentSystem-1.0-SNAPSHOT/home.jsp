@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainDashboard.css">
 </head>
 <body>
 

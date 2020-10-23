@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/staffLeaveHistory.css">
+    <link rel="stylesheet" href="style/mainDashboard.css">
+    <link rel="stylesheet" href="style/staffLeavehistory.css">
 </head>
 <body>
 <div class="content">
