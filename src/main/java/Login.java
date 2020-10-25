@@ -2,7 +2,6 @@ import login.LoginBean;
 import login.LoginDao;
 import user.UserBean;
 import user.UserDao;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +33,8 @@ public class Login extends HttpServlet
             UserBean Uprivileges = userPrivilegeDao.getUserPrivilege(privileges);
 
             request.setAttribute("empId", Uprivileges.getEmpId());
+            request.setAttribute("firstName", Uprivileges.getName());
+
             request.setAttribute("empAdd",Uprivileges.getEmpAdd());
             request.setAttribute("empDel", Uprivileges.getEmpDel());
             request.setAttribute("postAdd",Uprivileges.getPostAdd());

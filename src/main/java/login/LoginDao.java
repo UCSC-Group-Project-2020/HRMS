@@ -18,7 +18,6 @@ public class LoginDao
         Statement statement = null;
         ResultSet rs = null;
 
-        //String empIdDB = "";
         String userNameDB = "";
         String passwordDB = "";
 
@@ -28,7 +27,7 @@ public class LoginDao
             statement = con.createStatement();
             rs = statement.executeQuery("SELECT empId,password FROM user");
 
-            while (rs.next())
+            while(rs.next())
             {
                 userNameDB = rs.getString("empId");
                 passwordDB = rs.getString("password");

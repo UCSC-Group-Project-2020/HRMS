@@ -9,22 +9,23 @@ public class UserDao
     public UserBean getUserPrivilege(UserBean userBean)
     {
         String empId = userBean.getEmpId();
-        UserBean userPrivilege = new UserBean();
+        UserBean employee = new UserBean();
 
         Connection con = null;
         Statement statement = null;
         ResultSet rs = null;
 
         int empAddDB,empDelDB,postAddDB,postDelDB,postViewDB,chatSysDB,applyLeaveDB,decisionLeaveDB,salaryManageDB,customizeDataDB,editPersonalDetailsDB,giveComSugDB,viewComSugDB,viewMyAttendDB,viewAllAttendDB,viewMyLeavesDB,viewAllLeavesDB,viewMySalaryDB,viewAllSalaryDB,genReportDB;
-
+        String firstName;
         try
         {
             con = DBconn.getConnection();
             statement = con.createStatement();
-            rs = statement.executeQuery("SELECT * FROM userprivilege WHERE empId = '"+empId+"'");
+            rs = statement.executeQuery("SELECT user.firstName,userprivilege.* FROM user INNER JOIN userprivilege ON user.empId = userprivilege.empId WHERE user.empId = '"+empId+"'");
 
-            while (rs.next())
+            if(rs.next())
             {
+                firstName = rs.getString("firstName");
                 empAddDB = rs.getInt("addEmployee");
                 empDelDB = rs.getInt("deleteEmployee");
                 postAddDB = rs.getInt("addPost");
@@ -46,33 +47,34 @@ public class UserDao
                 viewAllSalaryDB = rs.getInt("viewAllSalary");
                 genReportDB = rs.getInt("generateReport");
 
-                userPrivilege.setEmpId(empId);
-                userPrivilege.setEmpAdd(empAddDB);
-                userPrivilege.setEmpDel(empDelDB);
-                userPrivilege.setPostAdd(postAddDB);
-                userPrivilege.setPostDel(postDelDB);
-                userPrivilege.setPostView(postViewDB);
-                userPrivilege.setChatSys(chatSysDB);
-                userPrivilege.setApplyLeave(applyLeaveDB);
-                userPrivilege.setDecisionLeave(decisionLeaveDB);
-                userPrivilege.setSalaryManage(salaryManageDB);
-                userPrivilege.setCustomizeData(customizeDataDB);
-                userPrivilege.setEditPersonalDetails(editPersonalDetailsDB);
-                userPrivilege.setGiveComSug(giveComSugDB);
-                userPrivilege.setViewComSug(viewComSugDB);
-                userPrivilege.setViewMyAttend(viewMyAttendDB);
-                userPrivilege.setViewAllAttend(viewAllAttendDB);
-                userPrivilege.setViewMyLeaves(viewMyLeavesDB);
-                userPrivilege.setViewAllLeaves(viewAllLeavesDB);
-                userPrivilege.setViewMySalary(viewMySalaryDB);
-                userPrivilege.setViewAllSalary(viewAllSalaryDB);
-                userPrivilege.setGenReport(genReportDB);
+                employee.setName(firstName);
+                employee.setEmpId(empId);
+                employee.setEmpAdd(empAddDB);
+                employee.setEmpDel(empDelDB);
+                employee.setPostAdd(postAddDB);
+                employee.setPostDel(postDelDB);
+                employee.setPostView(postViewDB);
+                employee.setChatSys(chatSysDB);
+                employee.setApplyLeave(applyLeaveDB);
+                employee.setDecisionLeave(decisionLeaveDB);
+                employee.setSalaryManage(salaryManageDB);
+                employee.setCustomizeData(customizeDataDB);
+                employee.setEditPersonalDetails(editPersonalDetailsDB);
+                employee.setGiveComSug(giveComSugDB);
+                employee.setViewComSug(viewComSugDB);
+                employee.setViewMyAttend(viewMyAttendDB);
+                employee.setViewAllAttend(viewAllAttendDB);
+                employee.setViewMyLeaves(viewMyLeavesDB);
+                employee.setViewAllLeaves(viewAllLeavesDB);
+                employee.setViewMySalary(viewMySalaryDB);
+                employee.setViewAllSalary(viewAllSalaryDB);
+                employee.setGenReport(genReportDB);
             }
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
-        return userPrivilege;
+        return employee;
     }
 }

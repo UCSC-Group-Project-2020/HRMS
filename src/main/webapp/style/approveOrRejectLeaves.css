@@ -84,12 +84,22 @@ textarea{
     text-align: left;
     padding-bottom: 30px;
 }
+.AppRej{
 
-.Show{
-    border:2px rgb(0, 0, 0) solid;
+    padding: 5px;
+    background: none;
+    border:2px solid;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
     border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
 }
-.Show:hover{
+.AppRej:hover{
     color: #1f9cf3;
     border:2px solid #073356;
     transition:300ms;

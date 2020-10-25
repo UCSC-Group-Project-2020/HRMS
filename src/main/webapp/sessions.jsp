@@ -6,8 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%
     String empId = (String) request.getAttribute("empId");
+    String firstName = (String) request.getAttribute("firstName");
+
     Object empAdd = request.getAttribute("empAdd");
     Object empDel = request.getAttribute("empDel");
     Object postAdd = request.getAttribute("postAdd");
@@ -30,6 +33,7 @@
     Object genReport = request.getAttribute("genReport");
 
     session.setAttribute("empId",empId);
+    session.setAttribute("firstName",firstName);
     session.setAttribute("empAdd",empAdd);
     session.setAttribute("empDel",empDel);
     session.setAttribute("postAdd",postAdd);
@@ -50,6 +54,6 @@
     session.setAttribute("viewMySalary",viewMySalary);
     session.setAttribute("viewAllSalary",viewAllSalary);
     session.setAttribute("genReport",genReport);
-
 %>
 <jsp:forward page="home.jsp"/>
+

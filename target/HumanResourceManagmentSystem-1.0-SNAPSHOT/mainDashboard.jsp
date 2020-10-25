@@ -21,7 +21,7 @@
             <a href="#">Employee<span class="sub-arrow"></span></a>
             <ul class="emp-show">
                 <%if(session.getAttribute("empAdd").equals(1)) {%><li><a href="addEmployee.jsp" >Add Employee</a></li><%}%>
-                <%if(session.getAttribute("empAdd").equals(1)) {%><li><a href="updateEmployee.jsp">Update Employee</a></li><%}%>
+                <%if(session.getAttribute("empAdd").equals(1)) {%><li><a href="searchEmployee.jsp">Update Employee</a></li><%}%>
                 <%if(session.getAttribute("empDel").equals(1)) {%><li><a href="removeEmployee.jsp">Remove Employee</a></li><%}%>
             </ul>
         </li>

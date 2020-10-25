@@ -187,10 +187,10 @@
             <table class="topic">
                 <tr>
                     <td>
-                        <label class="Basic"><b>Customize User Privilages</b></label>
+                        <label class="Basic"><b>Customize User Privileges</b></label>
                     </td>
                     <th>
-                        <label class="Basic"><b> Alowed</b></label>
+                        <label class="Basic"><b> Allowed</b></label>
                     </th>
                     <th>
                         <label class="Basic"><b> Not Allowed</b></label>

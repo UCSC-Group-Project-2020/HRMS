@@ -3,10 +3,18 @@ package user;
 public class UserBean
 {
     private String empId,fName,lName,NIC,dob,address,email,password,contact;
-    private int totLeaves,remLeaves,fingerprint,empAdd,empDel,postAdd,postDel,postView,chatSys,applyLeave,decisionLeave,salaryManage,customizeData,editPersonalDetails,giveComSug,viewComSug,viewMyAttend,viewAllAttend,viewMyLeaves,viewAllLeaves,viewMySalary,viewAllSalary,genReport;;
+    private int totLeaves,remLeaves,takenLeaves,fingerprint,empAdd,empDel,postAdd,postDel,postView,chatSys,applyLeave,decisionLeave,salaryManage,customizeData,editPersonalDetails,giveComSug,viewComSug,viewMyAttend,viewAllAttend,viewMyLeaves,viewAllLeaves,viewMySalary,viewAllSalary,genReport;;
     private float basicSal,otRate;
-    //private boolean empAdd,empDel,postAdd,postDel,postView,chatSys,applyLeave,decisionLeave,attendanceManage,salaryManage,customizeData,editPersonalDetails,giveComSug,viewComSug,viewMyAttend,viewAllAttend,viewMyLeaves,viewAllLeaves,viewMySalary,viewAllSalary,genReport;
+    private String firstName;
 
+    public String getName()
+    {
+        return firstName;
+    }
+    public void setName(String firstName)
+    {
+        this.firstName = firstName;
+    }
     public String getEmpId()
     {
         return empId;
@@ -80,6 +88,15 @@ public class UserBean
     {
         this.contact = contact;
     }
+    public int getFingerprint()
+    {
+        return fingerprint;
+    }
+    public void setFingerprint(int fingerprint)
+    {
+        this.fingerprint = fingerprint;
+    }
+
     public int getTotalLeaves()
     {
         return totLeaves;
@@ -96,14 +113,16 @@ public class UserBean
     {
         this.remLeaves = remLeaves;
     }
-    public int getFingerprint()
+    public int getTakenLeaves()
     {
-        return fingerprint;
+        return takenLeaves;
     }
-    public void setFingerprint(int fingerprint)
+    public void setTakenLeaves(int takenLeaves)
     {
-        this.fingerprint = fingerprint;
+        this.takenLeaves = takenLeaves;
     }
+
+
     public float getBasicSal()
     {
         return basicSal;
@@ -120,6 +139,8 @@ public class UserBean
     {
         this.otRate = otRate;
     }
+
+
     public int getEmpAdd()
     {
         return empAdd;
@@ -280,173 +301,4 @@ public class UserBean
     {
         this.genReport =  genReport;
     }
-
-    /*public boolean getEmpAdd()
-    {
-        return empAdd;
-    }
-    public void setEmpAdd(boolean empAdd)
-    {
-        this.empAdd =  empAdd;
-    }
-    public boolean getEmpDel()
-    {
-        return empDel;
-    }
-    public void setEmpDel(boolean empDel)
-    {
-        this.empDel =  empDel;
-    }
-    public boolean getPostAdd()
-    {
-        return postAdd;
-    }
-    public void setPostAdd(boolean postAdd)
-    {
-        this.postAdd =  postAdd;
-    }
-    public boolean getPostDel()
-    {
-        return postDel;
-    }
-    public void setPostDel(boolean postDel)
-    {
-        this.postDel =  postDel;
-    }
-    public boolean getPostView()
-    {
-        return postView;
-    }
-    public void setPostView(boolean postView)
-    {
-        this.postView =  postView;
-    }
-    public boolean getChatSys()
-    {
-        return chatSys;
-    }
-    public void setChatSys(boolean chatSys)
-    {
-        this.chatSys =  chatSys;
-    }
-    public boolean getApplyLeave()
-    {
-        return applyLeave;
-    }
-    public void setApplyLeave(boolean applyLeave)
-    {
-        this.applyLeave =  applyLeave;
-    }
-    public boolean getDecisionLeave()
-    {
-        return decisionLeave;
-    }
-    public void setDecisionLeave(boolean decisionLeave)
-    {
-        this.decisionLeave =  decisionLeave;
-    }
-    public boolean getAttendanceManage()
-    {
-        return attendanceManage;
-    }
-    public void setAttendanceManage(boolean attendanceManage)
-    {
-        this.attendanceManage =  attendanceManage;
-    }
-    public boolean getSalaryManage()
-    {
-        return salaryManage;
-    }
-    public void setSalaryManage(boolean salaryManage)
-    {
-        this.salaryManage =  salaryManage;
-    }
-    public boolean getCustomizeData()
-    {
-        return customizeData;
-    }
-    public void setCustomizeData(boolean customizeData)
-    {
-        this.customizeData =  customizeData;
-    }
-    public boolean getEditPersonalDetails()
-    {
-        return editPersonalDetails;
-    }
-    public void setEditPersonalDetails(boolean editPersonalDetails)
-    {
-        this.editPersonalDetails =  editPersonalDetails;
-    }
-    public boolean getGiveComSug()
-    {
-        return giveComSug;
-    }
-    public void setGiveComSug(boolean giveComSug)
-    {
-        this.giveComSug =  giveComSug;
-    }
-    public boolean getViewComSug()
-    {
-        return viewComSug;
-    }
-    public void setViewComSug(boolean viewComSug)
-    {
-        this.viewComSug =  viewComSug;
-    }
-    public boolean getViewMyAttend()
-    {
-        return viewMyAttend;
-    }
-    public void setViewMyAttend(boolean viewMyAttend)
-    {
-        this.viewMyAttend =  viewMyAttend;
-    }
-    public boolean getViewAllAttend()
-    {
-        return viewAllAttend;
-    }
-    public void setViewAllAttend(boolean viewAllAttend)
-    {
-        this.viewAllAttend =  viewAllAttend;
-    }
-    public boolean getViewMyLeaves()
-    {
-        return viewMyLeaves;
-    }
-    public void setViewMyLeaves(boolean viewMyLeaves)
-    {
-        this.viewMyLeaves =  viewMyLeaves;
-    }
-    public boolean getViewAllLeaves()
-    {
-        return viewAllLeaves;
-    }
-    public void setViewAllLeaves(boolean viewAllLeaves)
-    {
-        this.viewAllLeaves =  viewAllLeaves;
-    }
-    public boolean getViewViewMySalary()
-    {
-        return viewMySalary;
-    }
-    public void setViewMySalary(boolean viewMySalary)
-    {
-        this.viewMySalary =  viewMySalary;
-    }
-    public boolean getViewAllSalary()
-    {
-        return viewAllSalary;
-    }
-    public void setViewAllSalary(boolean viewAllSalary)
-    {
-        this.viewAllSalary =  viewAllSalary;
-    }
-    public boolean getGenReport()
-    {
-        return genReport;
-    }
-    public void setGenReport(boolean genReport)
-    {
-        this.genReport =  genReport;
-    }*/
 }
