@@ -18,7 +18,6 @@ public class LoginDao
         Statement statement = null;
         ResultSet rs = null;
 
-        //String empIdDB = "";
         String userNameDB = "";
         String passwordDB = "";
 

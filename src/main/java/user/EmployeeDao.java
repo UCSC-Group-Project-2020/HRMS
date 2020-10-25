@@ -119,13 +119,13 @@ public class EmployeeDao
         Statement statement = null;
         ResultSet rs = null;
 
-        String empId,fName,lName,NIC,dob,address,email,contact;
+        String empId,fName,lName,NIC;
 
         try
         {
             con = DBconn.getConnection();
             statement = con.createStatement();
-            rs = statement.executeQuery("SELECT * FROM user");
+            rs = statement.executeQuery("SELECT empId,firstName,lastName,NIC FROM user");
             while(rs.next())
             {
                 UserBean employee = new UserBean();
@@ -133,19 +133,11 @@ public class EmployeeDao
                 fName = rs.getString("firstName");
                 lName = rs.getString("lastName");
                 NIC = rs.getString("NIC");
-                dob = rs.getString("DOB");
-                address = rs.getString("address");
-                email = rs.getString("email");
-                contact = rs.getString("contactNo");
 
                 employee.setEmpId(empId);
                 employee.setFName(fName);
                 employee.setLName(lName);
                 employee.setNIC(NIC);
-                employee.setDOB(dob);
-                employee.setAddress(address);
-                employee.setContact(contact);
-                employee.setEmail(email);
 
                 empList.add(employee);
             }
