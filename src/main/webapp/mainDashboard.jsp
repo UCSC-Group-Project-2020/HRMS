@@ -11,7 +11,9 @@
 <nav class="menu">
 
     <img src="img/avatar.svg" alt="">
-
+    <h2 class="greeting">
+        Hi,<%=session.getAttribute("firstName")%>!
+    </h2>
     <ul class="main-nav-ul">
         <li>
             <a href="home.jsp">Home</a></li>

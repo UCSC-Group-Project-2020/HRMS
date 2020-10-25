@@ -12,8 +12,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
-    <link rel="stylesheet" href="style/addEmployee.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/searchEmployee.css">
 </head>
 <body>
 
@@ -27,23 +27,26 @@
             List<UserBean> empList = empDao.searchAllEmployees();
         %>
         <div class="search">
-            <table >
+            <table class="tblSearch">
                 <br>
                 <tr>
+                    <td></td><td></td>
                     <td>
-                        <input class="emp" type="text" name="empId">
+                        <input class="input" type="text" name="empId" id="empId" readonly>
                     </td>
+                    <td></td><td></td>
                 </tr>
-                <tr>
+                <tr><td></td><td></td>
                     <td>
-                        <input type="submit" value="Search">
+                        <input type="submit" class="submit" value="Search">
                     </td>
-                </tr>
-
+                    <td></td>
                 </tr>
             </table>
-            <div class="result">
-            <table id="table">
+        </div>
+        <div class="result">
+            <br>
+            <table id="tableResult">
                 <tr>
                     <th>
                         Employee Id
@@ -54,34 +57,20 @@
                     <th>
                         NIC
                     </th>
-                    <th>
-                        Address
-                    </th>
-                    <th>
-                        Contact No
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                    <th>
-                        Date of Birth
-                    </th>
+
                 </tr>
                 <%
-                for(UserBean employee:empList){
+                    for(UserBean employee:empList){
                 %>
                 <tr>
-                    <td><%=employee.getEmpId()%></td>
-                    <td><%=employee.getFName()%> <%=employee.getLName()%></td>
-                    <td><%=employee.getNIC()%></td>
-                    <td><%=employee.getAddress()%></td>
-                    <td><%=employee.getContact()%></td>
-                    <td><%=employee.getEmail()%></td>
-                    <td><%=employee.getDOB()%><%}%></td>
+                    <td class="empIdd"><%=employee.getEmpId()%></td>
+                    <td class="empName"><%=employee.getFName()%> <%=employee.getLName()%></td>
+                    <td class="empNIC"><%=employee.getNIC()%><%}%></td>
+
                 </tr>
             </table>
-            </div>
         </div>
+
     </form>
 </div>
 </div>
