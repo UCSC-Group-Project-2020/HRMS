@@ -9,15 +9,7 @@
     overflow-y: auto ;
     background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
 }
-.remove{
-    border:2px rgb(0, 0, 0) solid;
-    border-radius: 12px;
-}
-.remove:hover{
-    color: #1f9cf3;
-    border:2px solid #073356;
-    transition:300ms;
-}
+
 .content .result{
     padding-left: 60px;
     color: #ffffff;
@@ -111,16 +103,22 @@
     padding-left: 10px;
 }
 
-.approve,.reject{
-    border:2px rgb(0, 0, 0) solid;
+.apply{
+
+    padding: 5px;
+    background: none;
+    border:2px solid;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
     border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
 }
-.approve:hover{
-    color: #1f9cf3;
-    border:2px solid #073356;
-    transition:300ms;
-}
-.reject:hover{
+.apply:hover{
     color: #1f9cf3;
     border:2px solid #073356;
     transition:300ms;
