@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
+    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/approveOrRejectLeaves.css">
 </head>
 <body>
@@ -65,9 +65,9 @@
 
     </div>
     <div class="action">
-        <a href="#" class="Show">Approve</a>
+        <input class="AppRej" type="submit" value="Approve"/>
 
-        <a href="#" class="Show"> Reject</a>
+        <input class="AppRej" type="submit" value="Reject"/>
     </div>
     <br>
     <br><br>

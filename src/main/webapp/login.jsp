@@ -19,7 +19,6 @@
             <img src="img/avatar.svg">
             <h2 class="title">Human Resource Management System</h2>
 
-
             <div class="input-div one">
                 <div class="i">
                     <i class="fas fa-user"></i>

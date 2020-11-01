@@ -1,0 +1,136 @@
+.content{
+    position: absolute;
+    box-align:right;
+    top:70px;
+    left :290px;
+    width:1060px;
+    min-width: 1060px;
+    height:580px;
+    border:1px white solid;
+    overflow-y: auto ;
+    background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
+}
+body{
+    min-width: 1060px;
+}
+.submit{
+    padding: 5px;
+    background: none;
+    border:2px solid;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
+}
+.submit:hover{
+    color: #1f9cf3;
+    border:2px solid #073356;
+    transition:300ms;
+}
+
+.search tr,th,td{
+    padding-top: 00px;
+    align-items: center;
+}
+.heading{
+    width: 100%;
+    background-color:#000;
+
+    color: #ffffff;
+    padding: 10px 10px 10px 0;
+    text-align: center;
+
+}
+.label{
+    width: 500px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+.input{
+    position: relative;
+    line-height: 25px;
+    border-radius: 6px;
+    width:100%;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    padding-left: 80px;
+    font-weight: bold;
+}
+.content .result th,td,tr{
+
+    width: 500px;
+
+}
+.content .search th,td,tr{
+
+    width: 100px;
+    padding-top: 0px;
+    align-items: center;
+    padding-left: 0;
+}
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+.form-container .wave{
+    height:150px;
+    width: 250px;
+
+}
+.empIdd,empName,empNIC{
+    padding-left: 150px;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+}
+empName,empNIC{
+    padding-left: 200px;
+
+}
+.content .result table tr:not(:first-child){
+    cursor: pointer;transition: all .25s ease-in-out;
+}
+.content .result table tr:not(:first-child):hover{background-color: #041d31;}
+
+@media screen and (max-width: 1100px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+        left :0;
+        height: 100%;
+        margin: 10px;
+    }
+    .main-menu{
+        display: none;
+    }
+    .head{
+        display: none;
+    }
+
+}
+@media screen and (max-height: 580px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+    }
+    .head{
+        display: none;
+    }
+}
+
+table{
+    padding-left: 0;
+    color: white;
+}
+
+
+.tblSearch{
+    width: 100%;
+    align-items: center;
+}

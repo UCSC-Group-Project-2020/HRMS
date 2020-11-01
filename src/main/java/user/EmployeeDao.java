@@ -1,6 +1,7 @@
 package user;
 
 import DBconnection.DBconn;
+import javafx.util.Pair;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class EmployeeDao
 {
-    public UserBean searchEmployee(UserBean userBean)
+    public Pair<UserBean,String> searchEmployee(UserBean userBean)
     {
         String empId = userBean.getEmpId();
         UserBean employee = new UserBean();
@@ -17,7 +18,7 @@ public class EmployeeDao
         Statement statement = null;
         ResultSet rs = null;
 
-        String fName,lName,NIC,dob,address,email,password,contact;
+        String fName,lName,NIC,dob,address,email,password,contact,res;
         int totLeaves,remLeaves,takenLeaves,empAddDB,empDelDB,postAddDB,postDelDB,postViewDB,chatSysDB,applyLeaveDB,decisionLeaveDB,salaryManageDB,customizeDataDB,editPersonalDetailsDB,giveComSugDB,viewComSugDB,viewMyAttendDB,viewAllAttendDB,viewMyLeavesDB,viewAllLeavesDB,viewMySalaryDB,viewAllSalaryDB,genReportDB;
         float basicSal,otRate;
 
@@ -101,14 +102,21 @@ public class EmployeeDao
                 employee.setViewMySalary(viewMySalaryDB);
                 employee.setViewAllSalary(viewAllSalaryDB);
                 employee.setGenReport(genReportDB);
+
+                res = "exist";
+            }
+            else
+            {
+                res = "non exist";
             }
             con.close();
         }
         catch (SQLException e)
         {
             e.printStackTrace();
+            res = "error";
         }
-        return employee;
+        return new Pair<UserBean,String> (employee,res);
     }
 
     public List<UserBean> searchAllEmployees()
@@ -259,10 +267,21 @@ public class EmployeeDao
 
             st4.executeUpdate();
 
+            PreparedStatement st5 = con.prepareStatement("INSERT INTO notification VALUES(?,?,?,?,?)");
+
+            st5.setInt(1, empId);
+            st5.setInt(2, 0);
+            st5.setInt(3, 0);
+            st5.setInt(4, 0);
+            st5.setInt(5, 0);
+
+            st5.executeUpdate();
+
             st1.close();
             st2.close();
             st3.close();
             st4.close();
+            st5.close();
             con.close();
 
             res = "Success";

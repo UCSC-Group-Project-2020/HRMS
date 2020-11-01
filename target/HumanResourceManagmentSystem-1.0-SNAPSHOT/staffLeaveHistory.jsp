@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
-    <link rel="stylesheet" href="style/staffLeavehistory.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/staffLeaveHistory.css">
 </head>
 <body>
 <div class="content">
@@ -41,7 +41,7 @@
 
                 </td>
                 <th>
-                    <a href="#" class="Show">Show</a>
+                    <input class="send" type="submit" value="Show"/>
                 </th>
             </tr>
         </table>

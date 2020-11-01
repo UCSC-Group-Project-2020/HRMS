@@ -9,13 +9,13 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
+    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/mySalaryOverview.css">
 </head>
 <body>
 <div class="content">
     <div class="heading">
-        <h3> My Salary Overveiw </h3>
+        <h3> My Salary Overview </h3>
     </div>
     <br>
     <div class="selection">

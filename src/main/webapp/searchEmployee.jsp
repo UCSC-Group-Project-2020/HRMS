@@ -32,7 +32,7 @@
                 <tr>
                     <td></td><td></td>
                     <td>
-                        <input class="input" type="text" name="empId" id="empId" readonly>
+                        <input class="input" type="text" name="empId" id="empId" >
                     </td>
                     <td></td><td></td>
                 </tr>
@@ -51,10 +51,10 @@
                     <th>
                         Employee Id
                     </th>
-                    <th>
+                    <th align="left">
                         Name
                     </th>
-                    <th>
+                    <th align="justify">
                         NIC
                     </th>
 

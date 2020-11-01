@@ -18,7 +18,11 @@
         <form action="login" method="post">
             <img src="img/avatar.svg">
             <h2 class="title">Human Resource Management System</h2>
-
+            <%
+                if(request.getAttribute("err").equals(1)){
+            %>
+                <input type="text" class="input" id="msg" name="msg" value="Login Failed.">
+            <%}%>
 
             <div class="input-div one">
                 <div class="i">

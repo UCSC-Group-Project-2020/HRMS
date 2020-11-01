@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import user.EmployeeDao;
 import user.UserBean;
 
@@ -14,13 +15,21 @@ public class SearchEmployeeById extends HttpServlet
         String empId;
 
         empId = request.getParameter("empId");
+
         UserBean employee = new UserBean();
         employee.setEmpId(empId);
 
         EmployeeDao empDao = new EmployeeDao();
-        employee = empDao.searchEmployee(employee);
+        Pair<UserBean,String> p = empDao.searchEmployee(employee);
 
-        request.setAttribute("employee",employee);
-        request.getRequestDispatcher("/updateEmployee.jsp").forward(request, response);
+        if(p.getValue().equals("exist"))
+        {
+            request.setAttribute("employee",p.getKey());
+            request.getRequestDispatcher("/updateEmployee.jsp").forward(request, response);
+        }
+        else
+        {
+            request.getRequestDispatcher("/searchEmployee.jsp").forward(request, response);
+        }
     }
 }
