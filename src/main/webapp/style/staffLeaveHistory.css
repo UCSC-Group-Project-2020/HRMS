@@ -9,22 +9,11 @@
     height:580px;
     border:1px white solid;
     overflow-y: auto ;
-    background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
-}
-.serchResult{
-    color: #ffffff;
-    background: #000000;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
+    background-image: linear-gradient(to right,#073356, #041d31, #000);
 }
 .selection{
     padding-left: 50px;
-    border-bottom: 1px solid white;
 }
-
 .content .selection tr td {
     width: 300px;
     padding-left: 150px;
@@ -35,15 +24,14 @@
     padding-bottom: 15px;
 }
 .content .result{
+    border-top:1px white solid;
     color: #ffffff;
 }
 .content .result th{
+
     color: #ffffff;
     text-align: center;
-    padding-bottom: 20px;
-    width: 150px;
-    padding-top: 20px;
-
+    padding-bottom: 30px;
 }
 .content .result tr{
     border: 1px solid black;
@@ -52,7 +40,8 @@
 }
 .content .result td {
     width: 300px;
-    height: 40px;
+    padding-left: 20px;
+    height: 30px;
 }
 
 .heading{
@@ -62,6 +51,7 @@
     color: #ffffff;
     padding: 10px 10px 10px 0px;
     text-align: center;
+
 }
 .label{
     width: 500px;
@@ -100,9 +90,6 @@
     color: #1f9cf3;
     border:2px solid #073356;
     transition:300ms;
-}
-.reason{
-    overflow: hidden;
 }
 .content .result table tr:not(:first-child){
     cursor: pointer;transition: all .25s ease-in-out;
