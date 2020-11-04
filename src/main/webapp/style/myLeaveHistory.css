@@ -13,16 +13,6 @@
 }
 .selection{
     padding-left: 50px;
-    border-bottom: 1px solid white;
-}
-.serchResult{
-    color: #ffffff;
-    background: #000000;
-    text-align: center;
-    border-bottom: 1px solid white;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
 }
 .content .selection tr td {
     width: 300px;
@@ -34,16 +24,14 @@
     padding-bottom: 15px;
 }
 .content .result{
-
+    border-top:1px white solid;
     color: #ffffff;
 }
 .content .result th{
+
     color: #ffffff;
     text-align: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
-
-    width: 150px;
+    padding-bottom: 30px;
 }
 .content .result tr{
     border: 1px solid black;
@@ -52,7 +40,8 @@
 }
 .content .result td {
     width: 300px;
-    height: 40px;
+    padding-left: 20px;
+    height: 30px;
 }
 
 .heading{
@@ -82,29 +71,14 @@
 }
 
 .Show{
-
-    padding: 5px;
-    background: none;
-    border:2px solid;
-    text-decoration: none;
-    padding: 10px;
-    float: right;
-    margin:10px 6px 20px 6px;
+    border:2px rgb(0, 0, 0) solid;
     border-radius: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    transition-property: background;
 }
 .Show:hover{
     color: #1f9cf3;
     border:2px solid #073356;
     transition:300ms;
 }
-.content .result .reason{
-    overflow: hidden;
-}
-
 .content .result table tr:not(:first-child){
     cursor: pointer;transition: all .25s ease-in-out;
 }
