@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
+    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/addComplain.css">
 </head>
 <body>
@@ -82,7 +82,7 @@
                 <tr>
                     <td></td>
                     <th>
-                        <a href="#" class="send">Send</a>
+                        <input class="send" type="submit" value="Send"/>
                     </th>
                 </tr>
             </table>

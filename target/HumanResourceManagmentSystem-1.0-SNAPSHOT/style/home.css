@@ -1,0 +1,137 @@
+
+.content{
+
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    box-align:right;
+    top:70px;
+    left :290px;
+    width:1060px;
+    height:580px;
+    border:1px white solid;
+    overflow-y: auto ;
+    background-image: linear-gradient(to right, #052740, #052740, #000);
+
+}
+.post{
+
+    width:1040px;
+
+}
+.name{
+
+    color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+
+.date{
+
+    color: #ffffff;
+    text-align: left;
+    font-size: 15px;
+    padding-left:20px;
+    padding-bottom: 10px;
+
+}
+.des{
+
+    color: #ffffff;
+    text-align: left;
+
+    padding: 10px;
+    padding: 20px;
+    width:1000px;
+
+}
+
+
+.imgL,.imgR{
+
+    width: 480px;
+    height: 300px;
+}
+.imgL:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    margin-left: 60px;
+    border:1px white solid;
+    transition: 1s;
+}
+.imgR:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    margin-right: 60px;
+    border:1px white solid;
+    transition: 1s;
+}
+.Dobimage{
+
+    width:960px;
+    height: 600px;
+}
+.label{
+    width: 500px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+.heading{
+
+    width:1000px;
+    background-color:#000;
+    color: #ffffff;
+    padding: 10px 10px 10px 0px;
+    text-align: center;
+
+
+}
+@media screen and (max-width: 1100px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+        left :0;
+        height: 100%;
+        margin: 10px;
+    }
+    .main-menu{
+        display: none;
+    }
+    .head{
+        display: none;
+    }
+
+}
+@media screen and (max-height: 580px){
+    .content{
+        grid-gap: 5rem;
+        top:0;
+    }
+    .head{
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #052740;
+
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border:1px white solid;
+    background: #000;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    border:1px white solid;
+    background: #052740;
+    transition: 800ms;
+}
