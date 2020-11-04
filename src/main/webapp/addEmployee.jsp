@@ -41,15 +41,25 @@ To change this template use File | Settings | File Templates.
                         Statement statement = con.createStatement();
                         rs = statement.executeQuery("SELECT empId FROM user ORDER BY empId DESC LIMIT 1");
 
-                        while (rs.next()) {%>
+                       if (rs.next()) {%>
                 <th>
                     <input class="input" type="text" name="empid" value="<%=rs.getInt("empId")+1%>" readonly>
                 </th>
             </tr>
-                    <%}} catch (SQLException e) {
-                        e.printStackTrace();
-                        System.out.println(e);
-                    }%>
+            <%}else {%>
+            <th>
+                <input class="input" type="text" name="empid" value="1000" readonly>
+            </th>
+
+            </tr>
+            <%}
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Error");
+                System.out.println(e);
+            }%>
             <tr>
                 <td>
                     <label class="label">First Name</label>
