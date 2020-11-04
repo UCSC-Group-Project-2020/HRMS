@@ -9,14 +9,14 @@
     overflow-y: auto ;
     background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
 }
-.remove{
-    border:2px rgb(0, 0, 0) solid;
-    border-radius: 12px;
-}
-.remove:hover{
-    color: #1f9cf3;
-    border:2px solid #073356;
-    transition:300ms;
+.response{
+    background: #000000;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 .content .result{
     padding-left: 60px;
@@ -25,17 +25,23 @@
 }
 
 .content .result th{
-
+    width: 200px;
+    padding-bottom: 12px;
+    padding-top: 12px;
     color: #ffffff;
     text-align: center;
     padding-bottom: 30px;
 }
 .content .result tr{
-
+    padding-top: 12px;
     color: #ffffff;
     text-align: center;
+    padding-bottom: 12px;
 }
 .content .result td {
+    padding-bottom: 12px;
+    padding-top: 12px;
+
     width: 300px;
     padding-left: 20px;
     height: 30px;
@@ -105,27 +111,36 @@
     border-bottom:1px white solid;
 }
 .content .btn td{
-    padding-left: 650px;
+    padding-left: 750px;
 }
 .content .btn th{
     padding-left: 10px;
 }
 
-.approve,.reject{
-    border:2px rgb(0, 0, 0) solid;
+.apply{
+
+    padding: 5px;
+    background: none;
+    border:2px solid;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
     border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
 }
-.approve:hover{
+.apply:hover{
     color: #1f9cf3;
     border:2px solid #073356;
     transition:300ms;
 }
-.reject:hover{
-    color: #1f9cf3;
-    border:2px solid #073356;
-    transition:300ms;
+.reasonA tr{
+    width: 500px;
 }
-textarea{
+.textarea{
     width: 700px;
     height: 150px;
     border-radius: 6px;

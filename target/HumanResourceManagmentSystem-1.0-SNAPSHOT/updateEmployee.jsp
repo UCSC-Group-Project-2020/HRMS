@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/mainDashboard.css">
-    <link rel="stylesheet" href="style/addEmployee.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/Employee.css">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
                 </tr>
             </table>
         </div>
-
+        <br>
         <br>
         <label class="Basic">Basic Details</label>
         <br>
@@ -183,10 +183,10 @@
                         <label class="label">Add Employee / Update Employee</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="employeeAdd" value="1">
+                        <input class="input" type="radio" name="employeeAdd" value="1" <%if(employee.getEmpAdd()==1){%>checked<%}%>>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="employeeAdd" value="0">
+                        <input class="input" type="radio" name="employeeAdd" value="0" <%if(employee.getEmpAdd()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -194,10 +194,10 @@
                         <label class="label">Remove Employee</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="employeeRemove" value="1">
+                        <input class="input" type="radio" name="employeeRemove" value="1" <%if(employee.getEmpDel()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="employeeRemove" value="0" checked>
+                        <input class="input" type="radio" name="employeeRemove" value="0" <%if(employee.getEmpDel()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
@@ -210,10 +210,10 @@
                         <label class="label">Add Post / Update Post</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="postAdd" value="1">
+                        <input class="input" type="radio" name="postAdd" value="1"<%if(employee.getPostAdd()==1){%>checked<%}%> >
                     </th>
                     <th>
-                        <input class="input" type="radio" name="postAdd" value="0" checked>
+                        <input class="input" type="radio" name="postAdd" value="0" <%if(employee.getPostAdd()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -221,10 +221,10 @@
                         <label class="label">Delete Post</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="postDelete" value="1">
+                        <input class="input" type="radio" name="postDelete" value="1" <%if(employee.getPostDel()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="postDelete" value="0" checked>
+                        <input class="input" type="radio" name="postDelete" value="0" <%if(employee.getPostDel()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -232,10 +232,10 @@
                         <label class="label">View Post</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="postView" value="1">
+                        <input class="input" type="radio" name="postView" value="1" <%if(employee.getPostView()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="postView" value="0" checked>
+                        <input class="input" type="radio" name="postView" value="0" <%if(employee.getPostView()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -243,10 +243,10 @@
                         <label class="label">Use Chat System</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="chatSystemUse" value="1">
+                        <input class="input" type="radio" name="chatSystemUse" value="1"<%if(employee.getChatSys()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="chatSystemUse" value="0" checked>
+                        <input class="input" type="radio" name="chatSystemUse" value="0" <%if(employee.getChatSys()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
@@ -259,10 +259,10 @@
                         <label class="label">Apply For Leave</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="leaveApply" value="1">
+                        <input class="input" type="radio" name="leaveApply" value="1"<%if(employee.getApplyLeave()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="leaveApply" value="0" checked>
+                        <input class="input" type="radio" name="leaveApply" value="0" <%if(employee.getApplyLeave()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -270,10 +270,10 @@
                         <label class="label">Leave Approve or Reject Leave</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="ApproveOrRejectLeave" value="1">
+                        <input class="input" type="radio" name="ApproveOrRejectLeave" value="1"<%if(employee.getDecisionLeave()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="ApproveOrRejectLeave" value="0" checked>
+                        <input class="input" type="radio" name="ApproveOrRejectLeave" value="0" <%if(employee.getDecisionLeave()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -281,10 +281,10 @@
                         <label class="label">View Leave History Only My Account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="myLeaveHistoryView" value="1">
+                        <input class="input" type="radio" name="myLeaveHistoryView" value="1"<%if(employee.getViewMyLeaves()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="myLeaveHistoryView" value="0" checked>
+                        <input class="input" type="radio" name="myLeaveHistoryView" value="0" <%if(employee.getViewMyLeaves()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -292,37 +292,26 @@
                         <label class="label">View Leave History Others Account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="otherLeaveHistoryView" value="1">
+                        <input class="input" type="radio" name="otherLeaveHistoryView" value="1"<%if(employee.getViewAllLeaves()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="otherLeaveHistoryView" value="0" checked>
+                        <input class="input" type="radio" name="otherLeaveHistoryView" value="0" <%if(employee.getViewAllLeaves()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
             <table>
                 <br>
                 <label class="Basic">Attendance Management</label>
-                <tr>
-                    <td>
-                        <br>
-                        <label class="label">Attendance Management</label>
-                    </td>
-                    <th>
-                        <input class="input" type="radio" name="attendanceManagement" value="1">
-                    </th>
-                    <th>
-                        <input class="input" type="radio" name="attendanceManagement" value="0" checked>
-                    </th>
-                </tr>
+
                 <tr>
                     <td>
                         <label class="label">View Attendance History Only My Account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="myAttendanceHistoryView" value="1">
+                        <input class="input" type="radio" name="myAttendanceHistoryView" value="1" <%if(employee.getViewMyAttend()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="myAttendanceHistoryView" value="0" checked>
+                        <input class="input" type="radio" name="myAttendanceHistoryView" value="0" <%if(employee.getViewMyAttend()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -330,10 +319,10 @@
                         <label class="label">View Attendance History Others Account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="othersAttendanceHistoryView" value="1">
+                        <input class="input" type="radio" name="othersAttendanceHistoryView" value="1"<%if(employee.getViewAllAttend()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="othersAttendanceHistoryView" value="0" checked>
+                        <input class="input" type="radio" name="othersAttendanceHistoryView" value="0" <%if(employee.getViewAllAttend()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
@@ -346,10 +335,10 @@
                         <label class="label">Salary Management</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="salaryManagement" value="1">
+                        <input class="input" type="radio" name="salaryManagement" value="1"<%if(employee.getSalaryManage()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="salaryManagement" value="0" checked>
+                        <input class="input" type="radio" name="salaryManagement" value="0" <%if(employee.getSalaryManage()==0){%>checked<%}%>>
                     </th>
                 </tr>
 
@@ -358,10 +347,10 @@
                         <label class="label">View Salary Overview Only My Account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="mySalary" value="1">
+                        <input class="input" type="radio" name="mySalary" value="1"<%if(employee.getViewMySalary()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="mySalary" value="0" checked>
+                        <input class="input" type="radio" name="mySalary" value="0" <%if(employee.getViewMySalary()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -369,10 +358,10 @@
                         <label class="label">View Salary Overview Others account</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="otherSalary" value="1">
+                        <input class="input" type="radio" name="otherSalary" value="1"<%if(employee.getViewAllSalary()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="otherSalary" value="0" checked>
+                        <input class="input" type="radio" name="otherSalary" value="0" <%if(employee.getViewAllSalary()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
@@ -385,10 +374,10 @@
                         <label class="label">Give Complain/ Suggestion</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="complain_suggestionGive" value="1">
+                        <input class="input" type="radio" name="complain_suggestionGive" value="1"<%if(employee.getGiveComSug()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="complain_suggestionGive" value="0" checked>
+                        <input class="input" type="radio" name="complain_suggestionGive" value="0" <%if(employee.getGiveComSug()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -396,10 +385,10 @@
                         <label class="label">View Complain/ Suggestion</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="complain_suggestionView" value="1">
+                        <input class="input" type="radio" name="complain_suggestionView" value="1"<%if(employee.getViewComSug()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="complain_suggestionView" value="0" checked>
+                        <input class="input" type="radio" name="complain_suggestionView" value="0" <%if(employee.getViewComSug()==0){%>checked<%}%>>
                     </th>
                 </tr>
 
@@ -413,10 +402,10 @@
                         <label class="label">Customize Data</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="dataCustomize" value="1">
+                        <input class="input" type="radio" name="dataCustomize" value="1" <%if(employee.getCustomizeData()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="dataCustomize" value="0" checked>
+                        <input class="input" type="radio" name="dataCustomize" value="0" <%if(employee.getCustomizeData()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -424,10 +413,10 @@
                         <label class="label">Edit Personal Details</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="personalDetailsEdit" value="1">
+                        <input class="input" type="radio" name="personalDetailsEdit" value="1"<%if(employee.getEditPersonalDetails()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="personalDetailsEdit" value="0" checked>
+                        <input class="input" type="radio" name="personalDetailsEdit" value="0" <%if(employee.getEditPersonalDetails()==0){%>checked<%}%>>
                     </th>
                 </tr>
                 <tr>
@@ -435,10 +424,10 @@
                         <label class="label">Report generation</label>
                     </td>
                     <th>
-                        <input class="input" type="radio" name="generationReport" value="1">
+                        <input class="input" type="radio" name="generationReport" value="1" <%if(employee.getGenReport()==1){%>checked<%}%>>
                     </th>
                     <th>
-                        <input class="input" type="radio" name="generationReport" value="0" checked>
+                        <input class="input" type="radio" name="generationReport" value="0" <%if(employee.getGenReport()==0){%>checked<%}%>>
                     </th>
                 </tr>
             </table>
@@ -448,7 +437,7 @@
 
                     <th></th>
                     <th>
-                        <input type="submit" value="UPDATE">
+                        <input type="submit" class="update" value="UPDATE">
                     </th>
                 </tr>
             </table>
