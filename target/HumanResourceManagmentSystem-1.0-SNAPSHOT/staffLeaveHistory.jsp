@@ -6,10 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="leave.LeaveBean" %>
+<%@ page import="leave.LeaveDao" %>
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainStyle.css">
     <link rel="stylesheet" href="style/staffLeaveHistory.css">
 </head>
 <body>
@@ -18,6 +21,8 @@
         <h3> Staff Leave History </h3>
     </div>
     <br>
+    <form action="searchAllLeaves" method="POST">
+    <input class="input" type="number" name="empId" value="<%=session.getAttribute("empId")%>" hidden>
     <div class="selection">
         <table>
             <tr>
@@ -25,7 +30,7 @@
                     <label class="label">From</label>
                 </td>
                 <th>
-                    <input class="input" type="date" name="from_date">
+                    <input class="input" type="date" id="fromDate" name="fromDate">
                 </th>
             </tr>
             <tr>
@@ -33,7 +38,7 @@
                     <label class="label">To</label>
                 </td>
                 <th>
-                    <input class="input" type="date" name="to_date">
+                    <input class="input" type="date" id="toDate" name="toDate">
                 </th>
             </tr>
             <tr>
@@ -41,17 +46,29 @@
 
                 </td>
                 <th>
-                    <input class="send" type="submit" value="Show"/>
+                    <input class="show" type="submit" value="Show"/>
                 </th>
             </tr>
         </table>
     </div>
+
+    <%
+        String empId= (String) session.getAttribute("empId");
+        String toDate= request.getParameter("toDate");
+        String fromDate= request.getParameter("fromDate");
+
+        LeaveDao empDao = new LeaveDao();
+        List<LeaveBean> leaveListDefault = empDao.allLeaves(toDate,fromDate);
+    %>
+
     <div class="result">
-        <br>
-        <table>
+        <table id="table">
             <tr>
                 <th>
-                    Employee Id
+                    Leave
+                </th>
+                <th>
+                    Employee
                 </th>
                 <th>
                     Applied Date
@@ -68,222 +85,94 @@
                 <th>
                     Status
                 </th>
+                <th>
+                    Authorized
+                </th>
             </tr>
+            <%
+                String toDateSearch= request.getParameter("toDate");
+                String fromDateSearch= request.getParameter("fromDate");
+                if (toDateSearch != null) {
+                    System.out.println("loaded by sarching");
+                    List<LeaveBean> leavesBySearch = (List<LeaveBean>) request.getAttribute("leaves");%>
             <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
+                <h4 class="serchResult">
+                    Staff Leaves         From :- <%= fromDateSearch %>        To :- <%= toDateSearch %>
+                </h4>
             </tr>
+
+            <%
+                for(LeaveBean leave:leavesBySearch){ {
+            %>
+
+
             <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    D
-                </td>
+
+                <td class="leaveId"><%=leave.getLeaveId()%></td>
+                <td class="leaveId"><%=leave.getEmpId()%></td>
+                <td class="appDate"><%=leave.getappDate()%></td>
+                <td class="fromDate"><%=leave.getfromDate()%></td>
+                <td class="toDate"><%=leave.gettoDate()%></td>
+                <td class="reason"><%=leave.getReason()%></td>
+                <td class="status" <%
+                        if(leave.getstatus().equals("Rejected")){
+                            %>style="color: crimson" style="font-weight: 500"<%
+                }else if(leave.getstatus().equals("Pending")){%>
+                    style="color:dodgerblue"
+                    <%
+                        }else if(leave.getstatus().equals("Approved")){
+                              %>style="color:forestgreen" style="font-weight: 500"
+                        <%
+                            }%>
+
+
+                ><%=leave.getstatus()%></td>
+                <td class="empNIC"><%=leave.getAuthorizedPersonId()%><%}}}%></td>
+
             </tr>
+
+            <%
+
+                String toDate1= request.getParameter("toDate");
+
+                System.out.println(toDate1);
+                if (toDate1== null) {
+                    System.out.println("defaulty loaded");
+                    for(LeaveBean leave:leaveListDefault){
+            %>
+
+
             <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
+
+                <td class="leaveId"><%=leave.getLeaveId()%></td>
+                <td class="leaveId"><%=leave.getEmpId()%></td>
+                <td class="appDate"><%=leave.getappDate()%></td>
+                <td class="fromDate"><%=leave.getfromDate()%></td>
+                <td class="toDate"><%=leave.gettoDate()%></td>
+
+                <td class="reason"><%=leave.getReason()%></td>
+                <td class="status" <%
+                        if(leave.getstatus().equals("Rejected")){
+                            %>style="color: crimson" style="font-weight: 500"<%
+                }else if(leave.getstatus().equals("Pending")){%>
+                    style="color:dodgerblue"
+                    <%
+                        }else if(leave.getstatus().equals("Approved")){
+                              %>style="color:forestgreen" style="font-weight: 500"
+                        <%
+                            }%>
+
+
+                ><%=leave.getstatus()%></td>
+                <td class="empNIC"><%=leave.getAuthorizedPersonId()%><%}}%></td>
+
             </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    A
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A
-                </td>
-                <td>
-                    B
-                </td>
-                <td>
-                    C
-                </td>
-                <td>
-                    D
-                </td>
-                <td>
-                    D
-                </td>
-            </tr>
+
 
         </table>
     </div>
 
+    </form>
 </div>
 </div>
 <%@include file="mainDashboard.jsp" %>

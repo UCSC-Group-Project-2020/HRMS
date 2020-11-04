@@ -9,9 +9,9 @@
 
 <%
     String empId = (String) request.getAttribute("empId");
-    String firstName = (String) request.getAttribute("firstName");
 
     Object empAdd = request.getAttribute("empAdd");
+    String firstName = (String) request.getAttribute("firstName");
     Object empDel = request.getAttribute("empDel");
     Object postAdd = request.getAttribute("postAdd");
     Object postDel = request.getAttribute("postDel");
@@ -54,6 +54,8 @@
     session.setAttribute("viewMySalary",viewMySalary);
     session.setAttribute("viewAllSalary",viewAllSalary);
     session.setAttribute("genReport",genReport);
-%>
-<jsp:forward page="home.jsp"/>
 
+
+%>
+
+<jsp:forward page="home.jsp"/>

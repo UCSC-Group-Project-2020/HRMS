@@ -9,7 +9,7 @@
     height:580px;
     border:1px white solid;
     overflow-y: auto ;
-    background-image: linear-gradient(to right,#073356, #041d31, #000);
+    background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
 }
 .selection .date {
     padding-left: 20px;

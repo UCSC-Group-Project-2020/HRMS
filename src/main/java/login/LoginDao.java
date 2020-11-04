@@ -2,6 +2,7 @@ package login;
 
 import DBconnection.DBconn;
 
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +19,7 @@ public class LoginDao
         Statement statement = null;
         ResultSet rs = null;
 
+        //String empIdDB = "";
         String userNameDB = "";
         String passwordDB = "";
 
@@ -35,7 +37,7 @@ public class LoginDao
 
                 if (userName.equals(userNameDB) && password.equals(passwordDB))
                 {
-                    result = "SUCCESS";
+                    result = "Successful";
                     break;
                 }
             }
@@ -43,8 +45,10 @@ public class LoginDao
             e.printStackTrace();
         }
         if (result == null) {
-            result = "Invalid user credentials";
+
+            result = "UnSuccessful";
         }
         return result;
     }
+
 }

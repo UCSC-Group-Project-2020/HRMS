@@ -10,8 +10,8 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/Employee.css">
+    <link rel="stylesheet" href="style/mainStyle.css">
+    <link rel="stylesheet" href="style/updateEmployee.css">
 </head>
 <body>
 
@@ -29,6 +29,10 @@
                         <input class="emp" type="text" name="empId" value="<%=employee.getEmpId()%>" readonly>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+
+                    </td>
 
                 </tr>
             </table>

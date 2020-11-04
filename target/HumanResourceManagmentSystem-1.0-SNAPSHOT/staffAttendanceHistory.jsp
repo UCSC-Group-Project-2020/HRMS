@@ -7,10 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainStyle.css">
     <link rel="stylesheet" href="style/staffAttendanceHistory.css">
 </head>
 <body>
@@ -179,5 +181,6 @@
 </div>
 <%@include file="mainDashboard.jsp" %>
 </body>
+
 
 </html>

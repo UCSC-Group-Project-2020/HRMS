@@ -9,7 +9,7 @@ public class UserDao
     public UserBean getUserPrivilege(UserBean userBean)
     {
         String empId = userBean.getEmpId();
-        UserBean employee = new UserBean();
+        UserBean userPrivilege = new UserBean();
 
         Connection con = null;
         Statement statement = null;
@@ -21,11 +21,10 @@ public class UserDao
         {
             con = DBconn.getConnection();
             statement = con.createStatement();
-            rs = statement.executeQuery("SELECT user.firstName,userprivilege.* FROM user INNER JOIN userprivilege ON user.empId = userprivilege.empId WHERE user.empId = '"+empId+"'");
+            rs = statement.executeQuery("SELECT * FROM userprivilege WHERE empId = '"+empId+"'");
 
-            if(rs.next())
+            while (rs.next())
             {
-                firstName = rs.getString("firstName");
                 empAddDB = rs.getInt("addEmployee");
                 empDelDB = rs.getInt("deleteEmployee");
                 postAddDB = rs.getInt("addPost");
@@ -47,34 +46,43 @@ public class UserDao
                 viewAllSalaryDB = rs.getInt("viewAllSalary");
                 genReportDB = rs.getInt("generateReport");
 
-                employee.setName(firstName);
-                employee.setEmpId(empId);
-                employee.setEmpAdd(empAddDB);
-                employee.setEmpDel(empDelDB);
-                employee.setPostAdd(postAddDB);
-                employee.setPostDel(postDelDB);
-                employee.setPostView(postViewDB);
-                employee.setChatSys(chatSysDB);
-                employee.setApplyLeave(applyLeaveDB);
-                employee.setDecisionLeave(decisionLeaveDB);
-                employee.setSalaryManage(salaryManageDB);
-                employee.setCustomizeData(customizeDataDB);
-                employee.setEditPersonalDetails(editPersonalDetailsDB);
-                employee.setGiveComSug(giveComSugDB);
-                employee.setViewComSug(viewComSugDB);
-                employee.setViewMyAttend(viewMyAttendDB);
-                employee.setViewAllAttend(viewAllAttendDB);
-                employee.setViewMyLeaves(viewMyLeavesDB);
-                employee.setViewAllLeaves(viewAllLeavesDB);
-                employee.setViewMySalary(viewMySalaryDB);
-                employee.setViewAllSalary(viewAllSalaryDB);
-                employee.setGenReport(genReportDB);
+                userPrivilege.setEmpId(empId);
+                userPrivilege.setEmpAdd(empAddDB);
+                userPrivilege.setEmpDel(empDelDB);
+                userPrivilege.setPostAdd(postAddDB);
+                userPrivilege.setPostDel(postDelDB);
+                userPrivilege.setPostView(postViewDB);
+                userPrivilege.setChatSys(chatSysDB);
+                userPrivilege.setApplyLeave(applyLeaveDB);
+                userPrivilege.setDecisionLeave(decisionLeaveDB);
+                userPrivilege.setSalaryManage(salaryManageDB);
+                userPrivilege.setCustomizeData(customizeDataDB);
+                userPrivilege.setEditPersonalDetails(editPersonalDetailsDB);
+                userPrivilege.setGiveComSug(giveComSugDB);
+                userPrivilege.setViewComSug(viewComSugDB);
+                userPrivilege.setViewMyAttend(viewMyAttendDB);
+                userPrivilege.setViewAllAttend(viewAllAttendDB);
+                userPrivilege.setViewMyLeaves(viewMyLeavesDB);
+                userPrivilege.setViewAllLeaves(viewAllLeavesDB);
+                userPrivilege.setViewMySalary(viewMySalaryDB);
+                userPrivilege.setViewAllSalary(viewAllSalaryDB);
+                userPrivilege.setGenReport(genReportDB);
+
+                ResultSet rs2 = null;
+                String s="user";
+                rs2 = statement.executeQuery("SELECT firstName FROM "+s+" WHERE empId = '" + empId + "'");
+                while (rs2.next()) {
+
+                    firstName=rs2.getString("firstName");
+                    userPrivilege.setName(firstName);
+
+                }
             }
         }
         catch (SQLException e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
-        return employee;
+        return userPrivilege;
     }
 }

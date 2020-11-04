@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainStyle.css">
     <link rel="stylesheet" href="style/addPost.css">
 </head>
 <body>

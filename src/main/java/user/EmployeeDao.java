@@ -1,7 +1,6 @@
 package user;
 
 import DBconnection.DBconn;
-import javafx.util.Pair;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +8,28 @@ import java.util.List;
 
 public class EmployeeDao
 {
-    public Pair<UserBean,String> searchEmployee(UserBean userBean)
+    public  String removeEmployee(UserBean userBean){
+
+        String result,empId;
+        empId = userBean.getEmpId();
+        Connection con;
+        System.out.println(empId);
+        if(empId == ""){
+            return "Unsuccessful";
+        }
+        try{
+            con = DBconn.getConnection();
+            PreparedStatement st1 = con.prepareStatement("DELETE From user WHERE empId=?");
+            st1.setString(1,empId );
+            st1.executeUpdate();
+            result = "Successful";
+
+        } catch (SQLException e){
+            result = "Unsuccessful";
+        }
+        return result;
+    }
+    public UserBean searchEmployee(UserBean userBean)
     {
         String empId = userBean.getEmpId();
         UserBean employee = new UserBean();
@@ -18,7 +38,7 @@ public class EmployeeDao
         Statement statement = null;
         ResultSet rs = null;
 
-        String fName,lName,NIC,dob,address,email,password,contact,res;
+        String fName,lName,NIC,dob,address,email,password,contact;
         int totLeaves,remLeaves,takenLeaves,empAddDB,empDelDB,postAddDB,postDelDB,postViewDB,chatSysDB,applyLeaveDB,decisionLeaveDB,salaryManageDB,customizeDataDB,editPersonalDetailsDB,giveComSugDB,viewComSugDB,viewMyAttendDB,viewAllAttendDB,viewMyLeavesDB,viewAllLeavesDB,viewMySalaryDB,viewAllSalaryDB,genReportDB;
         float basicSal,otRate;
 
@@ -38,11 +58,14 @@ public class EmployeeDao
                 email = rs.getString("email");
                 password = rs.getString("password");
                 contact = rs.getString("contactNo");
+
                 totLeaves = rs.getInt("totalLeaves");
                 remLeaves = rs.getInt("remainingLeaves");
                 takenLeaves = rs.getInt("takenLeaves");
+
                 basicSal = rs.getFloat("basicSalary");
                 otRate = rs.getFloat("otRate");
+
                 empAddDB = rs.getInt("addEmployee");
                 empDelDB = rs.getInt("deleteEmployee");
                 postAddDB = rs.getInt("addPost");
@@ -102,21 +125,14 @@ public class EmployeeDao
                 employee.setViewMySalary(viewMySalaryDB);
                 employee.setViewAllSalary(viewAllSalaryDB);
                 employee.setGenReport(genReportDB);
-
-                res = "exist";
-            }
-            else
-            {
-                res = "non exist";
             }
             con.close();
         }
         catch (SQLException e)
         {
             e.printStackTrace();
-            res = "error";
         }
-        return new Pair<UserBean,String> (employee,res);
+        return employee;
     }
 
     public List<UserBean> searchAllEmployees()
@@ -158,13 +174,14 @@ public class EmployeeDao
         return empList;
     }
 
-    public String addEmployee(UserBean newEmp)
+    public int addEmployee(UserBean newEmp)
     {
         Connection con = null;
         Statement statement = null;
         ResultSet rs = null;
 
-        String fName,dob,lName,NIC,address,email,password,contact, res;
+        String fName,dob,lName,NIC,address,email,password,contact;
+        int res;
         //Date dob;
         int totLeaves,remLeaves,takenLeaves,empAddDB,empDelDB,postAddDB,postDelDB,postViewDB,chatSysDB,applyLeaveDB,decisionLeaveDB,salaryManageDB,customizeDataDB,editPersonalDetailsDB,giveComSugDB,viewComSugDB,viewMyAttendDB,viewAllAttendDB,viewMyLeavesDB,viewAllLeavesDB,viewMySalaryDB,viewAllSalaryDB,genReportDB;
         float basicSal,otRate;
@@ -267,13 +284,14 @@ public class EmployeeDao
 
             st4.executeUpdate();
 
-            PreparedStatement st5 = con.prepareStatement("INSERT INTO notification VALUES(?,?,?,?,?)");
+            PreparedStatement st5= con.prepareStatement("INSERT  into notification VALUES (?,?,?,?,?,?) ");
 
             st5.setInt(1, empId);
             st5.setInt(2, 0);
             st5.setInt(3, 0);
             st5.setInt(4, 0);
             st5.setInt(5, 0);
+            st5.setInt(6, 0);
 
             st5.executeUpdate();
 
@@ -282,15 +300,17 @@ public class EmployeeDao
             st3.close();
             st4.close();
             st5.close();
+
             con.close();
 
-            res = "Success";
+            res = 1;
         }
         catch (SQLException e)
         {
             e.printStackTrace();
-            res = "Error";
+            res = 0;
         }
+        System.out.println("res  ss = "+res);
         return res;
     }
 

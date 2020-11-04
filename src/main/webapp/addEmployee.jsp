@@ -1,22 +1,22 @@
-<%--
-Created by IntelliJ IDEA.
-User: Deshan-UCSC
-Date: 10/17/2020
-Time: 10:48 PM
-To change this template use File | Settings | File Templates.
+        <%--
+  Created by IntelliJ IDEA.
+  User: Deshan-UCSC
+  Date: 10/17/2020
+  Time: 10:48 PM
+  To change this template use File | Settings | File Templates.
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="DBconnection.DBconn" %>
 <%@ page import="java.sql.*" %>
-
+<%@ page import="user.UserBean" %>
+<%@ page import="java.nio.channels.UnresolvedAddressException" %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <title>Human Resource Management System</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/mainStyle.css">
     <link rel="stylesheet" href="style/Employee.css">
 </head>
 <body>
@@ -46,10 +46,11 @@ To change this template use File | Settings | File Templates.
                     <input class="input" type="text" name="empid" value="<%=rs.getInt("empId")+1%>" readonly>
                 </th>
             </tr>
-                    <%}} catch (SQLException e) {
+                        <%}} catch (SQLException e) {
                         e.printStackTrace();
+                        System.out.println("Error");
                         System.out.println(e);
-                    }%>
+                        }%>
             <tr>
                 <td>
                     <label class="label">First Name</label>
@@ -473,5 +474,9 @@ To change this template use File | Settings | File Templates.
 <%@include file="mainDashboard.jsp" %>
 
 <script type="text/javascript" src="js/addEmployee.js"></script>
+
+
 </body>
 </html>
+
+        

@@ -2,11 +2,15 @@ import login.LoginBean;
 import login.LoginDao;
 import user.UserBean;
 import user.UserDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.io.IOException;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Login extends HttpServlet
 {
@@ -25,7 +29,7 @@ public class Login extends HttpServlet
 
         String userValidate = loginDao.authenticateUser(loginBean);
 
-        if (userValidate.equals("SUCCESS"))
+        if (userValidate.equals("Successful"))
         {
             UserBean privileges = new UserBean();
             privileges.setEmpId(userName);
@@ -57,11 +61,13 @@ public class Login extends HttpServlet
             request.setAttribute("genReport",Uprivileges.getGenReport());
 
             request.getRequestDispatcher("/sessions.jsp").forward(request, response);
+
         }
         else
-        {
-            request.setAttribute("errMessage", userValidate);
+        {System.out.println("ASASS");
+            request.setAttribute("login", userValidate);
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
     }
+
 }

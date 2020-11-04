@@ -1,19 +1,21 @@
 import user.EmployeeDao;
 import user.UserBean;
-
+import javax.script.*;
+import javax.swing.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class AddEmployee extends HttpServlet
 {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-        String empId,fName,lName,NIC,dob,address,email,password,contact;
-        int totLeaves,remLeaves,empAddDB,empDelDB,postAddDB,postDelDB,postViewDB,chatSysDB,applyLeaveDB,decisionLeaveDB,salaryManageDB,customizeDataDB,editPersonalDetailsDB,giveComSugDB,viewComSugDB,viewMyAttendDB,viewAllAttendDB,viewMyLeavesDB,viewAllLeavesDB,viewMySalaryDB,viewAllSalaryDB,genReportDB;;
-        float basicSal,otRate;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String empId, fName, lName, NIC, dob, address, email, password, contact;
+        int totLeaves, remLeaves, empAddDB, empDelDB, postAddDB, postDelDB, postViewDB, chatSysDB, applyLeaveDB, decisionLeaveDB, salaryManageDB, customizeDataDB, editPersonalDetailsDB, giveComSugDB, viewComSugDB, viewMyAttendDB, viewAllAttendDB, viewMyLeavesDB, viewAllLeavesDB, viewMySalaryDB, viewAllSalaryDB, genReportDB;
+        ;
+        float basicSal, otRate;
 
         empId = request.getParameter("empid");
         fName = request.getParameter("first_name");
@@ -53,6 +55,7 @@ public class AddEmployee extends HttpServlet
         genReportDB = Integer.valueOf(request.getParameter("generationReport"));
 
         UserBean newEmp = new UserBean();
+
         newEmp.setEmpId(empId);
         newEmp.setFName(fName);
         newEmp.setLName(lName);
@@ -91,15 +94,21 @@ public class AddEmployee extends HttpServlet
         newEmp.setGenReport(genReportDB);
 
         EmployeeDao regEmp = new EmployeeDao();
-        String res = regEmp.addEmployee(newEmp);
-        if(res.equals("Success"))
-        {
-            System.out.println("Successfully Registered.");
+        int res = regEmp.addEmployee(newEmp);
+
+        System.out.println("Res = " + res);
+
+        if (res==1) {
+
+            System.out.println("res  = " + res);
+
+        } else if(res == 0){
+            
+            System.out.println("res  = " + res);
+
+            response.sendRedirect("addEmployee.jsp");
         }
-        else
-        {
-            System.out.println("Error");
-        }
-        request.getRequestDispatcher("/addEmployee.jsp").forward(request, response);
+
+        System.out.println("AAAAAAAAAAAAAAAAAA .");
     }
 }

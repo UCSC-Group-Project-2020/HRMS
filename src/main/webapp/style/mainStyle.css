@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.main-menu .greeting{
+    width: 100%;
+    border-bottom: 3px solid #000000;
+    color: #ffffff;
+    padding:10px 10px 10px 0;
+
+    text-align: center;
+}
+.greeting:hover{
+color: #44b718;
+    
+    transition: 500ms;
+}
+body{
+    background: #212f38;
+
+}
+.heading{
+    width: 100%;
+    background-color:#000;
+    color: #ffffff;
+    padding: 10px 10px 10px 0px;
+    text-align: center;
+
+}
+.head a{
+    padding: 5px;
+    background: none;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
+}
+
+.avater{
+    width: 100px;
+    height: 100px;
+    display: flex;
+
+    margin:20px 40px 10px 85px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.main-menu {
+    grid-area: 1/1 / span 10 / span 1;
+    position: fixed;
+    left: 0;
+    width: 280px;
+    background-image: linear-gradient(to right, #000, #041d3c, #0c3b60);
+    height: 100%;
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+
+}
+
+.menu ul {
+
+    list-style: none;
+    margin: 0;
+}
+
+.menu ul li {
+
+    position: relative;
+    width: 280px;
+
+    background-image: linear-gradient(to right, #000, #041d3c, #0c3b60);
+}
+
+.menu ul ul {
+    transition: all 800ms;
+    opacity: 0;
+    width: 150px;
+    position: absolute;
+    visibility: hidden;
+    left: 100%;
+    top: -2%;
+}
+
+.menu ul ul a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    width: 100%;
+    line-height: 35px;
+    border-radius: 6px;
+    font-weight: 400;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-left: 3px solid transparent;
+
+    transition: 800ms;
+    transition-property: background;
+}
+.menu ul li:hover>ul {
+
+    background-image: linear-gradient(to right, #000, #041d3c, #0c3b60);
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-menu a{
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.menu ul li ul li {
+    width:200px;
+}
+.menu a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    width: 100%;
+    text-align: justify;
+    line-height: 40px;
+    font-weight: 500;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 4px solid transparent;
+
+    transition: 800ms;
+}
+.content .show{
+    padding: 5px;
+    background: none;
+    border:2px solid;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+    margin:10px 6px 20px 6px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    transition-property: background;
+}
+h1{
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    padding: 25px;
+    background-color: black;
+}
+.menu ul ul a:hover {
+    background-color: #052740;
+    border-left: 3px solid  #fff;
+    background-position: left;
+    color: #1f9cf3;
+    padding-left: 40px;
+    transition: 800ms;
+}
+span{
+    color: #052841;
+    text-decoration: none;
+    width: 100%;
+}
+.menu a:hover {
+    background-color: #052740;
+    border-left: 3px solid  #fff;
+    background-position: left;
+    color: #1f9cf3;
+    padding-left: 40px;
+    transition: 800ms;
+}
+
+.Logout{
+    background: #031420;
+    border:none;
+    font-weight: 600;
+}
+.head{
+    grid-area: 1/2/ span 1 / span 4;
+    height: 60px;
+    width: 100%;
+    background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
+    position: absolute;
+}
+.Show{
+    border:2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+}
+.Show:hover{
+    color: #1f9cf3;
+    border:2px solid #073356;
+    transition:300ms;
+}
+.head a:hover{
+  border-bottom: 3px solid white;
+    color: dodgerblue;
+    transition: 300ms;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea myArea myArea';
+    background-color: #2196F3;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #052740;
+
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border:1px white solid;
+    background: #000;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    border:1px white solid;
+    background: #052740;
+    transition: 800ms;
+}

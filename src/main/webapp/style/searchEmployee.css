@@ -10,6 +10,16 @@
     overflow-y: auto ;
     background-image: linear-gradient(to right, #0c3b60, #0c3b60, #041d3c, #000);
 }
+
+.response{
+    background: #000000;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
 body{
     min-width: 1060px;
 }
@@ -51,6 +61,9 @@ body{
     color: white;
     font-family: "Roboto", sans-serif;
 }
+.search{
+    border-bottom: 1px solid white;
+}
 .input{
     position: relative;
     line-height: 25px;
@@ -63,16 +76,16 @@ body{
     font-weight: bold;
 }
 .content .result th,td,tr{
-
     width: 500px;
-
+    height: 30px;
+    text-align: center;
 }
 .content .search th,td,tr{
 
     width: 100px;
-    padding-top: 0px;
-    align-items: center;
-    padding-left: 0;
+
+    text-align: center;
+
 }
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
@@ -83,7 +96,7 @@ body{
 
 }
 .empIdd,empName,empNIC{
-    padding-left: 150px;
+
     align-items: center;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -133,4 +146,5 @@ table{
 .tblSearch{
     width: 100%;
     align-items: center;
+
 }
